@@ -24,7 +24,7 @@ class Runner {
 	public void run(StringExecutable e){
 		System.out.println("Executing code block ...");
 		String value = e.check("Warszawa");
-		System.out.println("Value: " + value+100);
+		System.out.println("Value: " + value);
 	}
 	
 	public void run(ManyParamsExecutable e){
