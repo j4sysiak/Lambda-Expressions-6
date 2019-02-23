@@ -6,6 +6,10 @@ interface StringExecutable {
 	String check(String a);
 }
 
+interface ManyParamsExecutable {
+	int check(int a, int b);
+}
+
 
 //---------------------------------------------------------------------
 
@@ -22,6 +26,12 @@ class Runner {
 		String value = e.check("Warszawa");
 		System.out.println("Value: " + value+100);
 	}
+	
+	public void run(ManyParamsExecutable e){
+		System.out.println("Executing code block ...");
+		int value = e.check(12, 13);
+		System.out.println("Value: " + value*100);
+	}
 }
 
 //---------------------------------------------------------------------
@@ -35,12 +45,12 @@ public class App {
 		System.out.println("=================depricated (java 1.6 - 1.7)=======================");
 		
 		runner.run(
-			/*implementing object interface Executable*/ new IntExecutable() {
+			/*implementing object interface Executable*/ new ManyParamsExecutable() {
 			 
 			@Override
-			public int check(int a) {
+			public int check(int a, int b) {
 				System.out.println("check: Hello there.");
-				return 1+a;   //1+12
+				return 1+a+b;   //1+12+13
 			}
  
 			}
