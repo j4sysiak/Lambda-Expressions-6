@@ -88,6 +88,12 @@ public class App {
 				(a,b) -> a+b+7   //12+13+7
 			  );
 		
+		
+		StringExecutable strExec = (a) -> {
+					return a+" "+"Kraków";
+			};
+		
+			runner.run(strExec);
 	}
 
 }
