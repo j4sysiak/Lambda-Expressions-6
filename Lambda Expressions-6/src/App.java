@@ -39,6 +39,9 @@ class Runner {
 public class App {
 
 	public static void main(String[] args) {
+		
+		int c=8;
+		int d=9;
 
 		Runner runner = new Runner();
 		
@@ -92,11 +95,33 @@ public class App {
 				(String a) -> a+" and "+"Lubartów"
 				);
 		
+		
+		
 		StringExecutable strExec = (a) -> {
 					return a+" and "+"Kraków";
 			};
 		
 			runner.run(strExec);
-	}
+			
+			
+			
+		ManyParamsExecutable intExec = (a,b) -> {
+				return a+b+c;  //12+13+8 = 33  
+		};
+	
+		runner.run(intExec);
+		
+		
+		Object objExec = (ManyParamsExecutable)(a,b) -> {
+			return a+b+d;   //12+13+9 = 34
+		};
+		
+		runner.run((ManyParamsExecutable) objExec);
+		
+		
+		}
+	
+	
+
 
 }
