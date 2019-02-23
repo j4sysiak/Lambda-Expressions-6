@@ -80,6 +80,10 @@ public class App {
 				(int a) -> a+5   //12+5
 			  );
 		
+		runner.run(/*implementing object interface Executable*/ 
+				(int a, int b) -> a+b+6   //12+13+6
+			  );
+		
 	}
 
 }
